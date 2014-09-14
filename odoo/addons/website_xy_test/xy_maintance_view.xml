@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+    <menuitem id="menu_sys_info_reporting" parent="base.menu_config" name="System Obj Info"
+    action="action_sys_info" sequence="60" />
+    
+    <record id="sys_info_tree_view" model="ir.ui.view">
+    	<field name="name">sys info tree view</field>
+    	<field name="model">xy.maintance</field>
+    	<field name="arch" type="xml">
+	        <tree string="obj list">
+	        	<field name="name" />
+	        	<field name="info" />
+	        </tree>
+        </field>
+    </record>
+    
+    <record id="action_sys_info" model="ir.actions.act_window">
+        <field name="name">sys obj list</field>
+        <field name="res_model">xy.maintance</field>
+        <field name="view_mode">tree</field>
+        <field name="ref">sys_info_tree_view</field>
+    </record>
+    
+    </data>
+</openerp>
